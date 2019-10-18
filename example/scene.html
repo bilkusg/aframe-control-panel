@@ -1,0 +1,18 @@
+<!-- This is where we define the scene for our application
+     It's in a separate file which is dynamically loaded after all our
+     modules are instantiated. That way we can be sure our components are registered
+     before we create the scene -->
+<a-scene background="color:#111;" keyboard-shortcuts="enterVR: false">
+  <!-- Assets allow us to load local files asynchronously through the dom -->
+  <a-entity initializeapp></a-entity>
+  <a-entity id="northlabel" position="0 30 -100" scale="100 100 1" text="align: center; color: #661111;value: T1=T T2=a Big=B One=1 2=2 3=3"> </a-entity>
+  <a-entity id="controlPanel" position="-2 2.2 -10" scale="10 10 1" a-control-panel="layout:exampleControlPanel;base-texture:base.jpg;keyTexture:key.jpg;"></a-entity>
+  <a-entity id="keyboard" position="-9 2.2 -10" scale="10 10 1" a-control-panel></a-entity>
+  <a-entity camera position="0 1.6 0" look-controls></a-entity>
+  <!-- We use an ambient light to ensure no automatic light is provided-->
+  <a-entity light="color: #FFFFFF; type: ambient;"></a-entity> 
+  <!-- the laser controls are customised with the raycaster and the line-->
+  <a-entity laser-controls raycaster="showLine: true; far:4000; objects: .collidable ;" line="color: orange; opacity:0.9;" ></a-entity>
+  <!-- We use oculus-touch-controls for each hand, and these entities capture events for us to act upon -->
+</a-scene>
+    
